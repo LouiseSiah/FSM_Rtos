@@ -2,6 +2,7 @@
 
 void buttonAndLed(TaskState *ts)
 {
+  int currentTime;
   switch(ts->state)
   {
     case RELEASED:
@@ -13,13 +14,12 @@ void buttonAndLed(TaskState *ts)
       }
       break;
     case PRESSED_ON:
-      printf("what?");
       if(getButton(ts->whichButton) == IS_PRESSED)
       {
         do
         {
-          ts->interval = getTime() - ts->recordedTime;
-        }while(ts->interval < 0.25);
+          currentTime = getTime();
+        }while(currentTime - (ts->recordedTime) < ts->interval);
         ts->recordedTime = getTime();
         turnLED(ts->whichLED, LED_OFF);
         ts->state = PRESSED_OFF;
@@ -34,8 +34,8 @@ void buttonAndLed(TaskState *ts)
       {
         do
         {
-          ts->interval = getTime() - ts->recordedTime;
-        }while(ts->interval < 0.25);
+          currentTime = getTime();
+        }while(currentTime - (ts->recordedTime) < ts->interval);
         ts->recordedTime = getTime();
         turnLED(ts->whichLED, LED_ON);
         ts->state = PRESSED_ON;
@@ -50,24 +50,24 @@ void buttonAndLed(TaskState *ts)
       {
         do
         {
-          ts->interval = getTime() - ts->recordedTime;
-        }while(ts->interval < 0.25);
+          currentTime = getTime();
+        }while(currentTime - (ts->recordedTime) < ts->interval);
         ts->recordedTime = getTime();
-        turnLED(ts->whichLED, LED_OFF);
         ts->state = RELEASED_OFF;
       }
       else // IS_PRESSED
       {
         ts->state = TURNING_OFF;
       }
+      turnLED(ts->whichLED, LED_OFF);
       break; 
     case RELEASED_OFF:
       if(getButton(ts->whichButton) == IS_RELEASED)
       {
         do
         {
-          ts->interval = getTime() - ts->recordedTime;
-        }while(ts->interval < 0.25);
+          currentTime = getTime();
+        }while(currentTime - (ts->recordedTime) < ts->interval);
         ts->recordedTime = getTime();
         turnLED(ts->whichLED, LED_ON);
         ts->state = RELEASED_ON;
@@ -82,7 +82,7 @@ void buttonAndLed(TaskState *ts)
         ts->state = RELEASED;
       break;
     default:
-      printf("Throw Error");
+      ts->state = RELEASED;
         
   }
 }

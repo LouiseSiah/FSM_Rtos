@@ -1,7 +1,6 @@
 #ifndef FSM_H
 #define FSM_H
-#include <stdio.h>
-#include <stdint.h>
+
 #include "GetSignal.h"
 
 typedef enum
