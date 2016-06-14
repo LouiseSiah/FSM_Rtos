@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -g2 -Wall -O0 -c -DSTM32F429ZI -DSTM32F429xx -DSTM32F429_439xx -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4 -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\app -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\Drivers\CMSIS\Include -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\app\Config -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\Drivers\CMSIS -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\app\Specific -I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\Drivers">
+      <target file="system_stm32f4xx.o" lastModified="1552eb6cc7c">
+         <source file="..\..\..\app\Config\system_stm32f4xx.c" lastModified="1552e97b9f1"/>
+      </target>
+      <target file="main.o" lastModified="1552eb6cbf0">
+         <source file="..\..\..\app\main.c" lastModified="1552e97b9fb"/>
+      </target>
+      <target file="Gpio.o" lastModified="1552eb6cccc">
+         <source file="..\..\..\app\Gpio.c" lastModified="1552e97b9fb"/>
+      </target>
+      <target file="startup_stm32f429xx.o" lastModified="1552eb6cc18">
+         <source file="..\..\..\app\Config\startup_stm32f429xx.s" lastModified="1552e97b9e7"/>
+      </target>
+      <target file="Rcc.o" lastModified="1552eb6cba0">
+         <source file="..\..\..\app\Rcc.c" lastModified="1552e97b9fb"/>
+      </target>
+   </processor>
+</history>

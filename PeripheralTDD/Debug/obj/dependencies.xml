@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD /I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4 /I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\app /I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\Drivers\CMSIS\Include /I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\app\Config /I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\Drivers\CMSIS /I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\app\Specific /I..\..\..\..\..\..\..\Desktop\LocalEmerald\DegreeSem4\PeripheralTDD\Drivers">
+      <source file="..\..\..\Drivers\CMSIS\Include\core_cmInstr.h" lastModified="1552e97c595">
+      </source>
+      <source file="..\..\..\app\Specific\Register.h" lastModified="1552e97bde3">
+      </source>
+      <source file="..\..\..\app\Gpio.h" lastModified="1552e97bde3">
+         <include file="..\..\..\app\Rcc.h"/>
+      </source>
+      <source file="..\..\..\Drivers\CMSIS\Include\core_cmFunc.h" lastModified="1552e97c595">
+      </source>
+      <source file="..\..\..\app\Rcc.c" lastModified="1552e97b9fb">
+         <include file="..\..\..\app\Rcc.h"/>
+      </source>
+      <source file="..\..\..\app\Config\stm32f4xx.h" lastModified="1552e97e8d1">
+         <include file="..\..\..\app\Config\stm32f429xx.h"/>
+      </source>
+      <source file="..\..\..\Drivers\CMSIS\Include\core_cm4.h" lastModified="1552e97bdc5">
+         <include file="..\..\..\Drivers\CMSIS\Include\core_cmInstr.h"/>
+         <include file="..\..\..\Drivers\CMSIS\Include\core_cmFunc.h"/>
+         <include file="..\..\..\Drivers\CMSIS\Include\core_cmSimd.h"/>
+      </source>
+      <source file="..\..\..\app\Config\stm32f429xx.h" lastModified="1552e97bdd9">
+         <include file="..\..\..\Drivers\CMSIS\Include\core_cm4.h"/>
+         <include file="..\..\..\app\Config\system_stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\app\Gpio.c" lastModified="1552e97b9fb">
+         <include file="..\..\..\app\Gpio.h"/>
+      </source>
+      <source file="..\..\..\app\Config\startup_stm32f429xx.s" lastModified="1552e97b9e7">
+      </source>
+      <source file="..\..\..\Drivers\CMSIS\Include\core_cmSimd.h" lastModified="1552e97c59f">
+      </source>
+      <source file="..\..\..\app\Config\system_stm32f4xx.h" lastModified="1552e97b9f1">
+      </source>
+      <source file="..\..\..\app\main.c" lastModified="1552e97b9fb">
+         <include file="..\..\..\app\Config\stm32f429xx.h"/>
+         <include file="..\..\..\app\Gpio.h"/>
+      </source>
+      <source file="..\..\..\app\Config\system_stm32f4xx.c" lastModified="1552e97b9f1">
+         <include file="..\..\..\app\Config\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\app\Rcc.h" lastModified="1552e97bde3">
+         <include file="..\..\..\app\Specific\Register.h"/>
+      </source>
+   </includePath>
+</dependencies>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m4 -mthumb -g2 -Wall -O0 -c -DSTM32F429ZI -DSTM32F429xx -DSTM32F429_439xx -I..\..\..\..\..\..\..\Desktop\Rtos\app\Config -I..\..\..\..\..\..\..\Desktop -I..\..\..\..\..\..\..\Desktop\Rtos\app\CMSIS -I..\..\..\..\..\..\..\Desktop\Rtos\app -I..\..\..\..\..\..\..\Desktop\Rtos\app\Specific -I..\..\..\..\..\..\..\Desktop\Rtos">
+      <target file="system_stm32f4xx.o" lastModified="1554d6a19df">
+         <source file="..\..\..\app\Config\system_stm32f4xx.c" lastModified="1554d558fab"/>
+      </target>
+      <target file="main.o" lastModified="1554d6a1943">
+         <source file="..\..\..\app\main.c" lastModified="1554d558fdd"/>
+      </target>
+      <target file="Gpio.o" lastModified="1554d6a1a43">
+         <source file="..\..\..\app\Gpio.c" lastModified="1554d558fac"/>
+      </target>
+      <target file="startup_stm32f429xx.o" lastModified="1554d6a196c">
+         <source file="..\..\..\app\Config\startup_stm32f429xx.s" lastModified="1554d558f9f"/>
+      </target>
+      <target file="Rcc.o" lastModified="1554d6a1887">
+         <source file="..\..\..\app\Rcc.c" lastModified="1554d558fad"/>
+      </target>
+   </processor>
+</history>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g2 -Map=test1.map -O0 --gc-sections -LC:/Users/GhinY/Desktop/LocalEmerald/DegreeSem4/PeripheralTDD -TC:/Users/GhinY/Desktop/LocalEmerald/DegreeSem4/PeripheralTDD/stm32f429zi_flash.ld -g">
+      <target file="test1.elf" lastModified="1552eb6cf2e">
+         <source file="..\obj\main.o" lastModified="1552eb6cbf0"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="1552eb6cc7c"/>
+         <source file="..\obj\Rcc.o" lastModified="1552eb6cba0"/>
+         <source file="..\obj\startup_stm32f429xx.o" lastModified="1552eb6cc18"/>
+         <source file="..\obj\Gpio.o" lastModified="1552eb6cccc"/>
+      </target>
+   </processor>
+</history>
