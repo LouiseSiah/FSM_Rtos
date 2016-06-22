@@ -3,6 +3,8 @@
 void buttonAndLed(TaskState *ts)
 {
   int currentTime;
+  // int buttonHasReleased;
+  
   switch(ts->state)
   {
     case RELEASED:
@@ -11,78 +13,68 @@ void buttonAndLed(TaskState *ts)
         turnLED(ts->whichLED, LED_ON);
         ts->recordedTime = getTime();
         ts->state = PRESSED_ON;
+        ts->buttonHasReleased = 0;
       }
       break;
     case PRESSED_ON:
       if(getButton(ts->whichButton) == IS_PRESSED)
       {
-        do
+        if(ts->buttonHasReleased)
         {
-          currentTime = getTime();
-        }while(currentTime - (ts->recordedTime) < ts->interval);
-        ts->recordedTime = getTime();
-        turnLED(ts->whichLED, LED_OFF);
-        ts->state = PRESSED_OFF;
+          ts->state = TURNING_OFF;
+          turnLED(ts->whichLED, LED_OFF);
+          break;
+        }
       }
-      else // IS_RELEASED
+      else // released button
       {
-        ts->state = RELEASED_ON;
+        ts->state = PRESSED_ON;
+        ts->buttonHasReleased = 1;
       }
-      break; 
+        
+      currentTime = getTime();
+      if(currentTime - (ts->recordedTime) < ts->interval)
+        break;
+
+      ts->recordedTime = getTime();
+      turnLED(ts->whichLED, LED_OFF);
+      ts->state = PRESSED_OFF;
+      break;
+    
     case PRESSED_OFF:
       if(getButton(ts->whichButton) == IS_PRESSED)
       {
-        do
+        if(ts->buttonHasReleased)
         {
-          currentTime = getTime();
-        }while(currentTime - (ts->recordedTime) < ts->interval);
-        ts->recordedTime = getTime();
-        turnLED(ts->whichLED, LED_ON);
-        ts->state = PRESSED_ON;
+          ts->state = TURNING_OFF;
+          turnLED(ts->whichLED, LED_OFF);
+          break;
+        }
       }
-      else // IS_RELEASED
+      else // released button
       {
-        ts->state = RELEASED_OFF;
+        ts->state = PRESSED_OFF;
+        ts->buttonHasReleased = 1;
       }
+      
+      currentTime = getTime();
+      if(currentTime - (ts->recordedTime) < ts->interval)
+        break;
+      
+      ts->recordedTime = getTime();
+      turnLED(ts->whichLED, LED_ON);
+      ts->state = PRESSED_ON;
       break;
-    case RELEASED_ON:
-      if(getButton(ts->whichButton) == IS_RELEASED)
-      {
-        do
-        {
-          currentTime = getTime();
-        }while(currentTime - (ts->recordedTime) < ts->interval);
-        ts->recordedTime = getTime();
-        ts->state = RELEASED_OFF;
-      }
-      else // IS_PRESSED
-      {
-        ts->state = TURNING_OFF;
-      }
-      turnLED(ts->whichLED, LED_OFF);
-      break; 
-    case RELEASED_OFF:
-      if(getButton(ts->whichButton) == IS_RELEASED)
-      {
-        do
-        {
-          currentTime = getTime();
-        }while(currentTime - (ts->recordedTime) < ts->interval);
-        ts->recordedTime = getTime();
-        turnLED(ts->whichLED, LED_ON);
-        ts->state = RELEASED_ON;
-      }
-      else // IS_PRESSED
-      {
-        ts->state = TURNING_OFF;
-      }
-      break;
+    
     case TURNING_OFF:
       if(getButton(ts->whichButton) == IS_RELEASED)
         ts->state = RELEASED;
       break;
+      
     default:
+      turnLED(ts->whichLED, LED_OFF);
       ts->state = RELEASED;
+      break;
         
   }
 }
